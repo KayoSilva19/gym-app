@@ -16,7 +16,7 @@ export function SignUp() {
 
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }} showsVerticalScrollIndicator={false}>
-        <VStack flex={1}  px={10} pb={16}>
+        <VStack flex={1} px={10} pb={16}>
         <Image 
           source={BackgroundImage}
           defaultSource={BackgroundImage}
@@ -46,8 +46,8 @@ export function SignUp() {
             placeholder='E-mail' 
             keyboardType='email-address'
             autoCapitalize='none'
-
           />
+          
           <Input 
             placeholder='Senha' 
             secureTextEntry
