@@ -1,14 +1,16 @@
-import { Group } from '@components/Group';
-import { HomeHeader } from '@components/HomeHeader';
-import { FlatList, HStack, VStack } from 'native-base';
-import { useState } from 'react';
+import { ExerciseCard } from '@components/ExerciseCard'
+import { Group } from '@components/Group'
+import { HomeHeader } from '@components/HomeHeader'
+import { FlatList, HStack, Heading, VStack, Text } from 'native-base'
+import { useState } from 'react'
 
 export function Home() {
-  const [groups, setGroups] = useState(['Costa', 'Bíceps', 'Tríceps', 'Ombro'])
-  const [groupSelected, setGroupSelected] = useState('')
+  const [exercices, setExercices] = useState(['1','2','3','4','5'])
+  const [groups, setGroups] = useState(['Costas', 'Bíceps', 'Tríceps', 'Ombro'])
+  const [groupSelected, setGroupSelected] = useState('COSTAS')
 
   function handleSelectedGroup(group: string) {
-    setGroupSelected(group)
+    setGroupSelected(group.toLocaleUpperCase())
   }
 
   return (
@@ -21,7 +23,7 @@ export function Home() {
             <Group
               key={item}
               name={item}
-              isActive={groupSelected.includes(item)}
+              isActive={groupSelected.includes(item.toLocaleUpperCase())}
               onPress={() => handleSelectedGroup(item)}
             />
           )}
@@ -32,6 +34,33 @@ export function Home() {
           my={10}
           maxH={10}
         />
+
+      <VStack flex={1} px={8}>
+        <HStack 
+          alignItems='center' 
+          justifyContent='space-between' 
+          mb={5}
+        >
+          <Heading 
+            color='gray.200'
+            fontSize='md'
+          >
+            Exercícios
+          </Heading>
+          <Text color='gray.200' fontSize='sm' >{exercices.length}</Text>
+        </HStack>
+
+        <FlatList 
+          data={exercices}
+          keyExtractor={item => item}
+          renderItem={({ item }) => (
+            <ExerciseCard />
+          )}
+          showsVerticalScrollIndicator={false}
+          _contentContainerStyle={{ paddingBottom: 20 }}
+        />
+
+      </VStack>
     </VStack>
   )
 }
