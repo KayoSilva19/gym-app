@@ -26,7 +26,7 @@ export function HomeHeader() {
         as={MaterialIcons} 
         name='logout'
         color='gray.200'
-        size={4}
+        size={5}
       />
     </TouchableOpacity>
 
