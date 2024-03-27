@@ -43,8 +43,6 @@ export function History() {
         
         px={8}
       />
-      
-      
     </VStack>
   )
 }

@@ -2,9 +2,7 @@ import { HStack, Heading, Image, Text, VStack, Icon } from 'native-base';
 import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
 import { Entypo } from '@expo/vector-icons'
 
-type ExerciseCardProps = TouchableOpacityProps & {
-
-}
+type ExerciseCardProps = TouchableOpacityProps
 
 export function ExerciseCard({ ...rest }: ExerciseCardProps) {
   return ( 
@@ -17,7 +15,7 @@ export function ExerciseCard({ ...rest }: ExerciseCardProps) {
           h={16}
           mr={4}
           rounded='md'
-          resizeMode='center'
+          resizeMode='cover'
         />
 
         <VStack flex={1}>
