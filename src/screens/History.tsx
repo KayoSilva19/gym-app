@@ -25,7 +25,7 @@ export function History() {
         )}
 
         renderSectionHeader={({ section }) => (
-          <Heading color='gray.100' fontSize='sm' mt={10} mb={3}>{section.title}</Heading>
+          <Heading color='gray.100' fontSize='sm' fontFamily='heading' mt={10} mb={3}>{section.title}</Heading>
         )}
 
         contentContainerStyle={exercises.length === 0 && {
